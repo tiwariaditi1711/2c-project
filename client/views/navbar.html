@@ -1,0 +1,57 @@
+<nav class="navbar navbar-default my-navbar">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+                
+                <a class="navbar-brand" href="#/">RideOnCab</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="#/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                    
+                    <li ng-show = "nav.isLoggedIn && nav.UserType == 'Driver'"><a href="#/Rides"><span class="glyphicon glyphicon-th-list"></span> My Rides</a></li>
+                    <li ng-show = "nav.isLoggedIn && nav.UserType == 'Driver'"><a href="#/Driver"><span class="glyphicon glyphicon-search"></span> Driver Map</a></li>
+                    <li ng-show = "nav.isLoggedIn && nav.UserType == 'Driver'"><a href= "#/Password"><span class="glyphicon glyphicon-edit"></span> Change password</a></li>
+                    <li ng-show = "nav.isLoggedIn && nav.UserType == 'Customer'"><a href="#/Profile"><span class="glyphicon glyphicon-saved"></span> Book Cab</a></li>
+                    <li ng-show = "nav.isLoggedIn && nav.UserType == 'Customer'"><a href="#/Rides"><span class="glyphicon glyphicon-th-list"></span> My Rides</a></li>
+                    <li class = "dropdown" ng-show =  "nav.isLoggedIn && nav.UserType == 'Admin'">
+                        <a href = "#/" class = "dropdown-toggle" data-toggle = "dropdown" role="button"><span class="glyphicon glyphicon-user"></span> Admin</a>
+                            <ul class = "dropdown-menu">
+                                <li><a href= "#/CabDriver"><span class="glyphicon glyphicon-plus"></span> Add Cab</a><li>
+                                <li role= "separator" class= "divider"></li>
+                                <li><a href= "#/Tarrif"><span class="glyphicon glyphicon-plus"></span> Add Tarrif</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class= "navbar-form navbar-left">
+                            <div class= "form-group">
+                    <!--<li><div ng-service="AuthenticationService">-->
+                        
+                      </div>
+                    </form>
+                    <ul ng-show = "nav.isLoggedIn" class= "nav navbar-nav navbar-right">
+                        <li><a href= "#"><span class="glyphicon glyphicon-thumbs-up"></span> Welcome {{nav.FirstName}}</a></li>
+                        <li><a href="#" ng-click='LogoutUser()' class="btn btn-default"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+
+                    </ul>
+                    <ul ng-hide = "nav.isLoggedIn" class= "nav navbar-nav navbar-right">
+                        <li><a href= "#"><span class="glyphicon glyphicon-thumbs-up"></span> Welcome, Guest</a></li>
+                        <li><a href= "#/Login"><span class="glyphicon glyphicon-lock"></span> Login</a></li>
+
+                        <li><a href= "#/Register"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+                    </ul>
+
+                
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
